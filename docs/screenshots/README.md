@@ -1,4 +1,4 @@
-﻿# v1.0.0 screenshots
+# v1.0.0 screenshots
 
 These screenshots were captured from the final PaedDeadSpace-UI v1.0.0 runtime using PaedDeadSpace-Core v1.0.0.
 
