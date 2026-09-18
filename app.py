@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 from importlib.metadata import version
 
@@ -30,7 +30,7 @@ st.sidebar.markdown("### PaedDeadSpace")
 st.sidebar.caption("Version 1.0.0")
 st.sidebar.caption("Core: PaedDeadSpace v1.0.0")
 st.warning(
-    "Educational/exploratory software only — not patient-specific clinical "
+    "Educational/exploratory software only â€” not patient-specific clinical "
     "decision support."
 )
 st.info(
@@ -73,9 +73,9 @@ def render_provenance_entry(entry: dict[str, object] | None) -> None:
 def model_presentation(model: dict[str, object]) -> str:
     name = str(model.get("name", "Unavailable"))
     if "Numa" in name:
-        return "Numa–Fletcher — reference / sensitivity construction"
+        return "Numaâ€“Fletcher â€” reference / sensitivity construction"
     if "Pearsall" in name:
-        return "Pearsall benchmark — benchmark only"
+        return "Pearsall benchmark â€” benchmark only"
     if "User-defined" in name:
         return "User-defined patient physiologic VD/VT"
     return name
@@ -143,7 +143,7 @@ def render_vt_composition(state: dict[str, object]) -> None:
     axis.set_xlim(0.0, float(state["vt_ml"]))
     axis.set_ylim(-0.55, 0.55)
     figure.tight_layout(pad=0.15)
-    st.pyplot(figure, use_container_width=True)
+    st.pyplot(figure, width="stretch")
     plt.close(figure)
 
     values = " | ".join(
@@ -178,7 +178,7 @@ def render_alveolar_ventilation_chart(result: dict[str, object]) -> None:
         axis.text(
             min(value * 0.03, maximum * 0.015),
             y,
-            f"{label}  •  {format_number(value)} mL/min",
+            f"{label}  â€¢  {format_number(value)} mL/min",
             ha="left",
             va="center",
             fontsize=9,
@@ -188,7 +188,7 @@ def render_alveolar_ventilation_chart(result: dict[str, object]) -> None:
         )
 
     figure.tight_layout(pad=0.15)
-    st.pyplot(figure, use_container_width=True)
+    st.pyplot(figure, width="stretch")
     plt.close(figure)
 
     change = alveolar_ventilation_percent_change(
@@ -262,7 +262,7 @@ def render_result(result: dict[str, object]) -> None:
             column.metric(label, value)
 
         if state["patient_airway_dead_space_ml"] is not None:
-            st.markdown("**Numa–Fletcher component outputs**")
+            st.markdown("**Numaâ€“Fletcher component outputs**")
             st.caption(
                 "Reference / sensitivity construction. Components are derived "
                 "model outputs and apparatus remains excluded from patient-only VD."
@@ -292,9 +292,9 @@ def render_result(result: dict[str, object]) -> None:
         st.subheader("VENTILATION")
         fraction = state["total_vd_vt"]
         ventilation_metrics = (
-            ("Total VD/VT — fraction", format_number(fraction, 3)),
+            ("Total VD/VT â€” fraction", format_number(fraction, 3)),
             (
-                "Total VD/VT — percentage",
+                "Total VD/VT â€” percentage",
                 f"{format_number(vd_vt_fraction_to_percent(fraction), 1)}%",
             ),
             (
@@ -329,7 +329,7 @@ def render_result(result: dict[str, object]) -> None:
                 f"{format_number(state['apparatus_dead_space_percent_vt'])}%",
             ),
             (
-                "Relative CO₂ burden",
+                "Relative COâ‚‚ burden",
                 format_number(comparison["relative_co2_burden"], 3),
             ),
             (
@@ -342,9 +342,9 @@ def render_result(result: dict[str, object]) -> None:
         for column, (label, value) in zip(columns, effect_metrics):
             column.metric(label, value)
         st.info(
-            "Under the current fixed-VCO₂ one-compartment assumptions, the RR "
-            "multiplier and relative CO₂ burden are algebraically identical. "
-            "They are not independent evidence. No absolute PaCO₂ is calculated."
+            "Under the current fixed-VCOâ‚‚ one-compartment assumptions, the RR "
+            "multiplier and relative COâ‚‚ burden are algebraically identical. "
+            "They are not independent evidence. No absolute PaCOâ‚‚ is calculated."
         )
 
     apparatus = result.get("apparatus", {})
@@ -418,7 +418,7 @@ with st.expander("Case inputs", expanded=inputs_expanded):
         user_patient_vd_vt = None
         if model_key == "user_defined":
             user_patient_vd_vt = st.text_input(
-                "Patient VD/VT (0 ≤ value < 1)",
+                "Patient VD/VT (0 â‰¤ value < 1)",
                 value="",
             )
             st.caption(
@@ -489,7 +489,7 @@ with st.expander("Term-infant descriptive reference (Williams et al.)", expanded
     for label, interval in reference["values"].items():
         st.write(
             f"**{label}:** {interval['median']:g} {interval['unit']} "
-            f"(IQR {interval['iqr'][0]:g}–{interval['iqr'][1]:g})"
+            f"(IQR {interval['iqr'][0]:g}â€“{interval['iqr'][1]:g})"
         )
     st.divider()
     render_provenance_entry(reference["provenance"])
@@ -505,7 +505,7 @@ with st.expander("Software version & runtime", expanded=False):
     st.write("**Runtime:** calculations are local; no external API is used.")
 
 with st.expander("About / Citation", expanded=False):
-    st.write("**PaedDeadSpace: Pediatric Apparatus Dead-Space Explorer — UI**")
+    st.write("**PaedDeadSpace: Pediatric Apparatus Dead-Space Explorer â€” UI**")
     st.write("Version: **v1.0.0**")
     st.write("Author: **Paolo Taffache** (ORCID: 0009-0002-8806-9733)")
     st.write("License: **MIT**")
@@ -513,3 +513,4 @@ with st.expander("About / Citation", expanded=False):
     st.write("UI repository: https://github.com/taffache-hash/PaedDeadSpace-UI")
     st.write("Preferred project citation: PaedDeadSpace-Core Zenodo DOI (pending first archived release).")
     st.warning("For educational and research use only. Not intended for clinical decision-making or patient-specific treatment recommendations.")
+
