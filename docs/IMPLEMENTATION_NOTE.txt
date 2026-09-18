@@ -1,0 +1,1 @@
+PaedDeadSpace-UI v1.0.0 presentation release. Scientific calculations remain delegated to the installed PaedDeadSpace-Core v1.0.0 package.
