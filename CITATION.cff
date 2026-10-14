@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use UI in scholarly work, please cite this software. For the scientific model as a whole, the PaedDeadSpace-Core DOI is the preferred citation once assigned by Zenodo."
+message: "If using this UI in scholarly work, cite the tagged UI release and its PaedDeadSpace-Core scientific dependency as appropriate. See README for manuscript-listed archive identifiers and verify Zenodo records before formal DOI citation."
 title: "PaedDeadSpace: Pediatric Apparatus Dead-Space Explorer — UI"
 type: software
 authors:
