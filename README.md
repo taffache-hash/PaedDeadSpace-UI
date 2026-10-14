@@ -3,7 +3,7 @@
 [![Release](https://img.shields.io/badge/release-v1.0.0-blue)](https://github.com/taffache-hash/PaedDeadSpace-UI/releases/tag/v1.0.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Tests](https://github.com/taffache-hash/PaedDeadSpace-UI/actions/workflows/tests.yml/badge.svg)](https://github.com/taffache-hash/PaedDeadSpace-UI/actions/workflows/tests.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22838224.svg)](https://doi.org/10.5281/zenodo.22838224)
+[![UI v1.0.0 DOI cited in manuscript](https://zenodo.org/badge/DOI/10.5281/zenodo.22838707.svg)](https://doi.org/10.5281/zenodo.22838707)
 
 **PaedDeadSpace: Pediatric Apparatus Dead-Space Explorer — UI** is the Streamlit presentation layer for PaedDeadSpace. It depends on the tagged **PaedDeadSpace-Core v1.0.0** release and does not duplicate the scientific equations.
 
@@ -49,7 +49,7 @@ This is a reproducibility benchmark, not a physiological default.
 Calculations are local. This UI does not call an external API. Streamlit usage-statistics collection is disabled by the included configuration.
 
 ## Citation
-The preferred citation for the scientific project is the PaedDeadSpace-Core concept DOI: **10.5281/zenodo.22838224**. The archived Core v1.0.0 release is **10.5281/zenodo.22838225**. Use the UI component DOI, once assigned, when specifically citing the UI implementation.
+The accompanying manuscript lists the UI v1.0.0 DOI as [10.5281/zenodo.22838707](https://doi.org/10.5281/zenodo.22838707). The scientific model is independently identified by the Core concept DOI [10.5281/zenodo.22838224](https://doi.org/10.5281/zenodo.22838224) and Core v1.0.0 DOI [10.5281/zenodo.22838225](https://doi.org/10.5281/zenodo.22838225). Cite the relevant [tagged UI source release](https://github.com/taffache-hash/PaedDeadSpace-UI/releases/tag/v1.0.0) alongside the Core when appropriate. Confirm the Zenodo record metadata before formal DOI citation.
 
 ## Author
 **Paolo Taffache** — ORCID: 0009-0002-8806-9733  
